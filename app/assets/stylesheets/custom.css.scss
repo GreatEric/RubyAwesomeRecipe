@@ -1,0 +1,96 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+$navbar-default-bg: black;
+@import "bootstrap-sprockets";
+@import "bootstrap";
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.article-actions {
+  border-top: 1px solid #eaeaea;
+  padding-top: 5px;
+}
+.article-title {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.article-body {
+  border-top: 1px solid #eaeaea;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.article-meta-details {
+  border-top: 1px solid #eaeaea;
+  margin-top: 15px;
+}
+.description {
+  margin-top: 0;
+}
+.listing {
+  list-style: none;
+  padding-left: 0;
+}
+
+.logbtn{
+  margin-top:10px;
+}
+
+.star img{
+  width:30px;
+  height: 30px;
+}
+.mg{
+  margin-bottom: 20px;
+}
+
+.pr{
+  padding-right:15px;
+}
+
+.ml{
+  margin-left:2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+select{
+  //清除select的边框样式
+  border: none;
+  //清除select聚焦时候的边框颜色
+  outline: none;
+  //将select的宽高等于div的宽高
+  width:100%;
+  height: 40px;
+  line-height: 40px;
+  //隐藏select的下拉图标
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  //通过padding-left的值让文字居中
+  padding-left: 20px;
+  padding-right: 20px;
+}

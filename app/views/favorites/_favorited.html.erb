@@ -1,0 +1,9 @@
+<% if current_user && recipe.favorite?(current_user) %>
+  <span class="favorites favorited">
+    <%= link_to image_tag("star1.png"), "#", :data => {:recipe => recipe.id }, class: 'star' %>
+  </span>
+<% else %>
+  <span class="favorites favorite">
+    <%= link_to image_tag("star2.png"), "#", :data => {:recipe => recipe.id }, class: 'star' %>
+  </span>
+<% end %>

@@ -1,0 +1,25 @@
+<% comments.each do |comment| %>
+  <div class="comments">
+  <h3 class="cheading"><%= link_to comment.user.name, user_path(comment.user) %><%= " gives #{comment.rating} stars on #{comment.time}"%></h3>
+  <p class="cdescription"><%= comment.description %></p>
+  <% if current_page?("/users/#{comment.user.id}") && logged_in? %>
+    <p><%= link_to "Recipe: #{comment.recipe.name}", recipe_path(comment.recipe) %></p>
+  <% end %>
+
+  <%= link_to "Edit", edit_recipe_comment_path(comment.recipe, comment) if logged_in? && current_user.can_edit?(comment)%>
+
+  <%= link_to "Delete", comment_path(comment), class: 'dcomment' if logged_in? && current_user.can_delete?(comment)%>
+  </div>
+<% end %>
+
+<script id="comment-template" type="text/x-handlebars-template">
+  <div class="comments">
+    <h3 class="cheading"><a href="/users/{{userId}}">{{userName}}</a> gives {{rating}} stars Just Now</h3>
+    <p class="cdescription">{{description}}</p>
+
+    <a href="/recipes/{{recipeId}}/comments/{{id}}/edit">Edit</a>
+
+    <a href="/comments/{{id}}/">Delete</a>
+    <br />
+  </div>
+ </script>

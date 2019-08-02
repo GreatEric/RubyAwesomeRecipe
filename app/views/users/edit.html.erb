@@ -1,0 +1,5 @@
+<%= form_for @user do |f| %>
+  <%= render 'layouts/form_errors', form: @user %>
+  <%= render 'form', f: f %>
+<%= f.submit "Submit" %>
+<% end %>

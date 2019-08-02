@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+        <h1>Top Trending Recipes:</h1>
+    </div>
+</div>
+<% if @recipes %>
+    <%= render 'recipes/favorites_listed', favorites: @favorites %>
+
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <h3>Our 5 latest Recipes</h3>
+            <%= render 'recipes/recipes_listed', recipes: @recipes %>
+        </div>
+    </div>
+<% else %>
+  Sign Up and help us add some recipes to our database!
+<% end %>

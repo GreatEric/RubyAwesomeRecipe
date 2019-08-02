@@ -1,0 +1,25 @@
+<div class="article-title">
+    <%= link_to recipe.name, recipe_path(recipe)%>
+</div>
+
+<div class="article-body">
+    <%= recipe.time_in_minutes %> minutes until it's ready | By:
+    <%= link_to recipe.user_name, user_path(recipe.user)%> |
+    <%= recipe.comments_size%> |
+    <%= render 'favorites/favorited', recipe: recipe%>
+</div>
+
+<div class="article-actions">
+    <% if !current_page?('/') && logged_in? %>
+      <%= link_to "Edit", edit_recipe_path(recipe) if current_user.can_edit?(recipe)%> | <%= link_to "Delete", recipe_path(recipe), method: :delete if current_user.can_delete?(recipe)%>
+    <% end %>
+</div>
+
+<script id="recipe-template" type="text/x-handlebars-template">
+  <div id="each-recipes">
+    <ul>
+      <li><h2><a href="/recipes/{{recipeId}}">{{name}}</a></h2></li>
+      <li>{{timeInMinutes}} minutes until it's ready | By: <a href="/users/{{userId}}">{{userName}}</a> </li>
+    </ul>
+  </div>
+</script>

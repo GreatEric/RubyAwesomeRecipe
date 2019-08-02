@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-xs-4 col-xs-offset-4">
+        <h3>Signup!</h3>
+    </div>
+
+    <%= form_for @user do |f| %>
+    <div class="row">
+        <div class="col-xs-4 col-xs-offset-4">
+            <%= render 'layouts/form_errors', form: @user %>
+              <%= render 'form', f: f %>
+              <div>Password Confirmation:</div> <div><%= f.password_field :password_confirmation %></div>
+              <%= f.submit "Submit" %>
+        </div>
+    </div>
+    <% end %>
+
+</div>

@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+        <h3> favorites list </h3>
+    </div>
+    <% favorites.each do |popular|%>
+        <div class="col-xs-8 col-xs-offset-2">
+          <div class="well well-lg">
+            <%= render 'recipes/list_recipes', recipe: popular.recipe %>
+          </div>
+        </div>
+    <% end %>
+</div>
